@@ -17,7 +17,7 @@ type middlewareController delivery.Middleware
 
 var MiddlewareController delivery.Handler
 
-func NewMiddleware(router delivery.Router, service ...delivery.Funcs) delivery.Handler {
+func NewMiddleware(router delivery.Router, service delivery.MiddlewareService) delivery.Handler {
 	return &middlewareController{
 		Router:  router,
 		Service: service,
