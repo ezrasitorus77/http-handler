@@ -4,7 +4,7 @@ const (
 	ParamPrefixRegex string = "->d:|->s:|->f:"
 	ParamKeyRegex    string = `\w+[^\:]`
 
-	FullPathRegex string = `^\/$|^\/\w$|^\/\w[a-zA-Z0-9\-\/->]+$`
+	FullPathRegex string = `^\/$|^\/\w$|^\/\w[a-zA-Z0-9\-\/->\:]+$`
 	SubPathRegex  string = `(^(->d:)|^(->s:)|^(->f:))(\w+$|[a-zA-Z0-9\-]+\w$)|^\-$|^(\w$)|^\w(\w+$|[a-zA-Z0-9\-]+\w$)`
 
 	StringRegex string = `.*`
