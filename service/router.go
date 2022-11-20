@@ -84,10 +84,13 @@ func (obj *routerService) addRoute(path, method string, hFunc http.HandlerFunc) 
 	}
 	attributes.Pairs[method] = hFunc
 
-	if splittedPath[0] == "" {
-		attributes.Root = "/"
-	} else {
-		attributes.Root = splittedPath[0]
+	attributes.Root = splittedPath[0]
+
+	if splittedPath[0] != "" {
+		if len(splittedPath) == 1 {
+			attributes.Root = ""
+			splittedPath = append([]string{""}, splittedPath...)
+		}
 
 		for i, sub := range splittedPath[1:] {
 			if e = validatePath(sub, false); e != nil {

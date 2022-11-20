@@ -122,7 +122,7 @@ func (obj *middlewareController) getAttrAndParams(w http.ResponseWriter, r *http
 
 	for _, attr := range routes {
 		if attr.Full == path {
-			for m, _ := range attr.Pairs {
+			for m := range attr.Pairs {
 				if m == method {
 					attribute = attr
 
@@ -132,11 +132,20 @@ func (obj *middlewareController) getAttrAndParams(w http.ResponseWriter, r *http
 		} else {
 			path = strings.Trim(path, "/")
 			splittedPath = strings.Split(path, "/")
-			root = splittedPath[0]
+			if splittedPath[0] == "" {
+				root = ""
+			} else {
+				if len(splittedPath) == 1 {
+					root = ""
+					splittedPath = append([]string{""}, splittedPath...)
+				}
+
+				root = splittedPath[0]
+			}
 
 			if attr.Root == root {
 				if len(attr.SubPaths) == len(splittedPath[1:]) {
-					for m, _ := range attr.Pairs {
+					for m := range attr.Pairs {
 						// CORS
 						if method != "OPTIONS" && m != method {
 							errFlag = 2
