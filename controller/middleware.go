@@ -9,8 +9,8 @@ import (
 
 	err "github.com/ezrasitorus77/http-handler/domain"
 	"github.com/ezrasitorus77/http-handler/domain/delivery"
+	log "github.com/ezrasitorus77/http-handler/helper"
 	"github.com/ezrasitorus77/http-handler/internal/consts"
-	log "github.com/ezrasitorus77/http-handler/internal/helper"
 )
 
 type middlewareController delivery.Middleware
