@@ -1,6 +1,0 @@
-INFO: 2022/11/08 23:22:52 log.go:32: GET:/test
-INFO: 2022/11/08 23:22:56 log.go:32: POST:/test
-INFO: 2022/11/08 23:23:01 log.go:32: POST:/tests
-INFO: 2022/11/08 23:39:29 log.go:31: GET:/test
-INFO: 2022/11/08 23:39:33 log.go:31: GET:/tess
-INFO: 2022/11/08 23:39:40 log.go:31: POST:/test
